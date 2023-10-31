@@ -19,6 +19,10 @@ mongoose
   .then(() => console.log("MongoDB connected..."))
   .catch((err) => console.error(err));
 
+  app.get("/", (req, res) => {
+    res.send("<h1>Hello, Server Started</h1>");
+  });
+
 app.use("/api", routes);
 
 app.listen(PORT, () => console.log("server started at "+`http://localhost:${PORT}`));
